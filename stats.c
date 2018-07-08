@@ -54,7 +54,6 @@ int* get_cpu_freqs() {
 			freq_list = (int*) realloc(freq_list, (freq_count + 4) * sizeof(int*));
 		
 		buf = strtok(NULL, " ");
-		printf("%d:: %d\n", freq_count, freq_list[freq_count]);
 		freq_count++;
 	}
 	
