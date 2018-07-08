@@ -5,6 +5,15 @@
 #include "root.h"
 #include "stats.h"
 
+int compare( const void* a, const void* b)
+{
+   int int_a = * ( (int*) a );
+   int int_b = * ( (int*) b );
+
+   // an easy expression for comparing
+   return (int_a > int_b) - (int_a < int_b);
+}
+
 int get_cpu_load() {
 	return get_stat_avg();
 }
@@ -56,6 +65,7 @@ int* get_cpu_freqs() {
 		buf = strtok(NULL, " ");
 		freq_count++;
 	}
+	qsort(freq_list, sizeof(freq_list) + 1, sizeof(int), compare);
 	
 	return freq_list;
 }
