@@ -13,7 +13,9 @@ void setup_tunables() {
 }
 
 void prepare() {
-	set_gov(0, "userspace");
+	for (int i = 0; i < get_present_cpus() + 1; i++) {
+		set_gov(i, "userspace");
+	}
 }
 
 void algorithm() {	
