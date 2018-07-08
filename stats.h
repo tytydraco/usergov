@@ -29,7 +29,7 @@ int ALG_SLEEP_MS;
 int get_cpu_load();
 int get_present_cpus();
 int get_stat_avg();
-int* get_cpu_freqs();
+int* get_cpu_freqs(int core);
 void set_cpu_freq(int core, int target_freq);
 void set_gov(int core, char* gov);
 char* read_file(char* path);

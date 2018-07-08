@@ -19,15 +19,17 @@ void prepare() {
 }
 
 void algorithm() {	
-	freq_list = get_cpu_freqs();
-	freq_list_size = sizeof(freq_list) + 1;
-
-	int load = get_cpu_load();
-	int index = freq_list_size * (load * LOAD_MULTIPLIER / 100.0);
-	printf("%d * (%d / %d) = index freq %d\n", freq_list_size, (int) (load * LOAD_MULTIPLIER), 100, index);
+	
 
 	// set for all cpus that it can
 	for (int i = 0; i < get_present_cpus() + 1; i++) {
+		freq_list = get_cpu_freqs(i);
+		freq_list_size = sizeof(freq_list) + 1;
+
+		int load = get_cpu_load();
+		int index = freq_list_size * (load * LOAD_MULTIPLIER / 100.0);
+		printf("%d * (%d / %d) = index freq %d\n", freq_list_size, (int) (load * LOAD_MULTIPLIER), 100, index);
+
 		set_cpu_freq(i, freq_list[index]);
 	}
 	

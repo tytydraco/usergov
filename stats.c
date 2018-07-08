@@ -49,8 +49,10 @@ int get_stat_avg() {
 	return (int) (loadavg);
 }
 
-int* get_cpu_freqs() {
-	char* freq_list_str = read_file(PATH_CPU "/cpu0/cpufreq/" CPU_AVAIL_FREQS);
+int* get_cpu_freqs(int core) {
+	char* path = (char*) malloc(75 * sizeof(char));
+	sprintf(path, PATH_CPU "/cpu%d/cpufreq/" CPU_AVAIL_FREQS, core);
+	char* freq_list_str = read_file(path);
 	int* freq_list = (int*) malloc(12 * sizeof(int));
 
 	char* buf = strtok(freq_list_str, " ");
@@ -66,6 +68,7 @@ int* get_cpu_freqs() {
 		freq_count++;
 	}
 	qsort(freq_list, sizeof(freq_list) + 1, sizeof(int), compare);
+	free(path);
 	
 	return freq_list;
 }
