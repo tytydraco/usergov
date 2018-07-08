@@ -6,7 +6,7 @@
 #include "stats.h"
 #include "alg.h"
 
-int main() {
+int main(int argc, char** argv) {
 	setup_tunables();
 	prepare();
 
