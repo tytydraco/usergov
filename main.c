@@ -7,6 +7,7 @@
 #include "alg.h"
 
 int main() {
+	setup_tunables();
 	prepare();
 
 	for (;;) {

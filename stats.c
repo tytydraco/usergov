@@ -87,7 +87,6 @@ char* read_file(char* path) {
 
 	char* output = (char*) malloc(bytes * sizeof(char));
 	if (!f) {
-		printf("ERROR: cannot fopen %s.\n", path);
 		return NULL;
 	}
 	
@@ -99,7 +98,6 @@ char* read_file(char* path) {
 void write_file(char* path, char* data) {
 	FILE* f = fopen(path, "w");
 	if (!f) {
-		printf("ERROR: cannot fopen %s.\n", path);
 		return;
 	}
 	fprintf(f, "%s", data);

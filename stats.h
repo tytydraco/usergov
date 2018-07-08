@@ -1,8 +1,10 @@
 #ifndef STATS_H
 #define STATS_H
 
-// constants
-#define STAT_AVG_SLEEP_MS 500
+// tunables
+int STAT_AVG_SLEEP_MS;
+int LOAD_MULTIPLIER;
+int ALG_SLEEP_MS;
 
 // paths
 #define PATH_CPU "/sys/devices/system/cpu/"
