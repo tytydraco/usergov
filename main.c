@@ -10,7 +10,7 @@ int main() {
 	setup_tunables();
 	prepare();
 
-	for (;;) {
+	while (1) {
 		algorithm();
 	}
 
