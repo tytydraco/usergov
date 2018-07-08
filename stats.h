@@ -3,7 +3,7 @@
 
 // tunables
 int STAT_AVG_SLEEP_MS;
-int LOAD_MULTIPLIER;
+float LOAD_MULTIPLIER;
 int ALG_SLEEP_MS;
 
 // paths
