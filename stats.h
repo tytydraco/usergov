@@ -8,7 +8,7 @@ int ALG_SLEEP_MS;
 
 // paths
 #define PATH_CPU "/sys/devices/system/cpu/"
-#define PATH_LOAD_AVG "/proc/loadavg"
+#define PATH_STAT "/proc/stat"
 
 // cpu subdirs and subfiles
 #define CPUFREQ "cpufreq/"
